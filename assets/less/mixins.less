@@ -1,0 +1,78 @@
+    .transition (@transition:"") {
+        -webkit-transition: @transition;
+           -moz-transition: @transition;
+             -o-transition: @transition;
+             -ms-transition: @transition;
+                transition: @transition;
+                -webkit-backface-visibility: hidden;
+    }
+
+    .transition-delay (@delay:0.3s) {
+        -webkit-transition-delay:@delay;
+           -moz-transition-delay:@delay;
+             -o-transition-delay:@delay;
+             -ms-transition-delay:@delay;
+                transition-delay:@delay;
+    }
+
+    .opacity (@alpha:1) {
+        opacity: @alpha;
+        -webkit-opacity: @alpha;
+        -moz-opacity: @alpha;    
+        -ms-opacity: @alpha;    
+        -o-opacity: @alpha;    
+    }
+
+    .box-shadow(@arguments) {
+      -webkit-box-shadow: @arguments;
+      -moz-box-shadow: @arguments;
+      -ms-box-shadow: @arguments;
+      box-shadow: @arguments;
+    }
+
+    .user-select(...) {
+        -webkit-user-select:@arguments;
+        -moz-user-select:@arguments;
+        -ms-user-select:@arguments;
+        -o-user-select:@arguments;
+        user-select:@arguments;
+    }
+
+    .transform-origin (...) {
+        -webkit-transform-origin: @arguments;
+        -moz-transform-origin: @arguments;
+        -o-transform-origin: @arguments;
+        transform-origin: @arguments;
+        }
+    .perspective (...) {
+        -webkit-perspective: @arguments;
+        -moz-perspective: @arguments;
+        -o-perspective: @arguments;
+        perspective: @arguments;
+        }
+    .transform (...) {
+        -webkit-transform: @arguments;
+        -moz-transform: @arguments;
+        -o-transform: @arguments;
+        transform: @arguments;
+        }
+    .transform3d (...) {
+        -webkit-transform: @arguments;
+        -webkit-transform-style: preserve-3d;
+        -moz-transform: @arguments;
+        -moz-transform-style: preserve-3d;
+        -o-transform: @arguments;
+        -o-transform-style: preserve-3d;
+        transform: @arguments;
+        transform-style: preserve-3d;
+    }
+    .scale (@scale) {
+        -webkit-transform: scale(@scale);
+        -moz-transform: scale(@scale);
+        -o-transform: scale(@scale);
+        transform: scale(@scale);
+        }
+    .debug(@color:red) {
+        
+        .box-shadow(~"-1px -1px 0 @{color}, 1px 1px 0 @{color}");
+    }
