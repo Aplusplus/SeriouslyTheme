@@ -14,8 +14,8 @@
     @background:#DDD;
     @font:'Karla','Futura', sans-serif;
     @ease:cubic-bezier(0.160, 0.720, 0.205, 0.915);
-    @logoheight:150px;
-    @base-fontsize:15px;
+    @logoheight:130px;
+    @base-fontsize:14px;
     @base-spacing:20px;
 
 
@@ -536,6 +536,9 @@
     ****************************** */
     #product {
         margin-top: @base-spacing*2;
+
+
+
          .image_container {
             width:55%;
             figure {
@@ -544,6 +547,19 @@
                     max-height: none;
                 }
             }
+         }
+
+         .inner {
+             white-space: nowrap;
+             height: 100%;
+             margin:0;
+             padding: 0;
+             li {
+                padding: 0;
+                 margin: 0;
+                 display: block;
+                 list-style: none;
+             }
          }
 
          .left_info h1 {
@@ -634,6 +650,9 @@
         .fix-header header {
             width:96%;
             left:2%;
+            #logotype img {
+                // height:@logoheight/2;
+            }
         }
         .product {
             
@@ -667,7 +686,7 @@
 
         #product {
             position: relative;
-            overflow: visible;
+            overflow: hidden;
             .image_container {
                 .transition(~"all 0.5s @{ease}");
                 width:100%;
@@ -676,16 +695,17 @@
                 top:60px;
                 left:0;
                 z-index: 95;
-                overflow: scroll;
+                overflow-x: scroll;
+                overflow-y: hidden;
                  -webkit-overflow-scrolling: touch;
+
                 figure {
-                    height: 100%;
-                    float:left;
+                    height: 400px;
                     display: block;
                     width:auto;
                     margin-bottom: 0;
                     img {
-                        height: 100%;
+                        height: 400px;
                         width:auto;
                         max-width: none;
                         .transition(none);
@@ -693,16 +713,16 @@
                     }
                 }
                 .box-shadow(0 0 8px rgba(0,0,0,0.3));
-                .inner {
-                    width:999em;
-                    height: 100%;
-                    background: #CCC;
 
-                }
+                
 
                 // .imagezoom & {
                 //     height: 800px;
                 // }
+            }
+
+            .inner li {
+                display: inline-block;
             }
 
             .details_container {
@@ -762,11 +782,7 @@
                 background-position: center -50px; 
             };
         }
-        .product {
-            .description {
-                max-width: none;
-            }
-        }
+
 
         #products.related {
             .box-shadow(0px 5px 8px rgba(0,0,0,.05) inset);
@@ -776,6 +792,12 @@
             padding:@base-spacing @base-spacing*10;
 
             margin-top: @base-spacing*10;
+
+            .product {
+                .left_info {
+                    float: none;
+                }
+            }
         }
 
         footer {

@@ -208,11 +208,15 @@ example: <html lang="en" class="fun fix-header"> enables a comic hand and a fixe
 
                 <div class="image_container">
                     {{#all_images}}
+                    <ul class="inner">
+                        <li>
                         <figure class="responsive" data-media="{{url-300}}" data-media440="{{url-500}}" data-media600="{{url-1000}}" data-media1400="{{url-2000}}" alt="{{title}}">
                                 <noscript>
                                     <img src="{{url-1000}}" alt="{{title}}">
                                 </noscript>
                             </figure>
+                        </li>
+                    </ul>
                     {{/all_images}}
                 </div>
 
