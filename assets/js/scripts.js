@@ -62,7 +62,6 @@
 			}
 		});
 
-		$('div.image_container').wrapInner('<div class="inner" />');
 		
 
 		// clicking on the whole product leads to the product page, like a boss
@@ -90,10 +89,6 @@
 	self.loaded = function(event){
 		W.log('loaded');
 		self.$B.addClass('loaded');
-
-		$('div.image_container .inner figure').each(function(){
-			
-		})
 	};
 
 	self.resize = function(event){

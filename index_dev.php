@@ -207,8 +207,9 @@ example: <html lang="en" class="fun fix-header"> enables a comic hand and a fixe
                 </div>
 
                 <div class="image_container">
-                    {{#all_images}}
                     <ul class="inner">
+                    {{#all_images}}
+                    
                         <li>
                         <figure class="responsive" data-media="{{url-300}}" data-media440="{{url-500}}" data-media600="{{url-1000}}" data-media1400="{{url-2000}}" alt="{{title}}">
                                 <noscript>
@@ -216,8 +217,9 @@ example: <html lang="en" class="fun fix-header"> enables a comic hand and a fixe
                                 </noscript>
                             </figure>
                         </li>
-                    </ul>
+                    
                     {{/all_images}}
+                    </ul>
                 </div>
 
 
