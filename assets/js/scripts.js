@@ -153,7 +153,7 @@
 			var $p = $('#products.related'),
 				pixelsInScreen = -1 * ($p.offset().top - sT - $W.height());
 
-				if(pixelsInScreen > 0 && $W.width() > self.breakpointOneCol) {
+				if(pixelsInScreen > 0 && $W.width() > self.breakpointOneCol && self._bodyHasState(self.states.SCROLLED_PAST_NAV)) {
 					self._adjustBodyState(self.states.SCROLLED_TO_RELATED);
 				} else {
 					self._adjustBodyState(self.states.SCROLLED_TO_RELATED,true);
