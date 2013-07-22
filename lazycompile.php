@@ -34,7 +34,7 @@ example: <html lang="en" class="fun fix-header"> enables a comic hand and a fixe
         {{#about_page}}- About{{/about_page}}
     </title>
     <link href="{{assets_url}}/shared/css/base.css" rel="stylesheet" type="text/css">
-    <link href='https://fonts.googleapis.com/css?family=Karla:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Allan|Karla:400,700,400italic' rel='stylesheet' type='text/css'>
     <style type="text/css">
         <?php include('assets/css/seriously.css'); ?>
     </style>
@@ -77,13 +77,7 @@ example: <html lang="en" class="fun fix-header"> enables a comic hand and a fixe
                 </a>
             </li>
 
-            {{#store_blog_url}}
-            <li>
-                <a href="{{store_blog_url}}" target="_blank">
-                    Blog
-                </a>
-            </li>
-            {{/store_blog_url}}
+
 
 
             {{#navigation}}
@@ -111,9 +105,7 @@ example: <html lang="en" class="fun fix-header"> enables a comic hand and a fixe
             {{/navigation}}
             
 
-            <li id="search_container">
-                {{search}}
-            </li>
+            
 
         </ul>
     </header>
@@ -198,27 +190,22 @@ example: <html lang="en" class="fun fix-header"> enables a comic hand and a fixe
 
                         <div class="description html_content">
                          {{description}}
-                        </div>
-
                          <div class="social">
                             {{social_buttons}}
                         </div>
+                        </div>
+
+                         
          
                 </div>
 
                 <div class="image_container">
                     <ul class="inner">
-                    {{#all_images}}
-                    
-                        <li>
+                    {{#all_images}}<li>
                         <figure class="responsive" data-media="{{url-300}}" data-media440="{{url-500}}" data-media600="{{url-1000}}" data-media1400="{{url-2000}}" alt="{{title}}">
-                                <noscript>
-                                    <img src="{{url-1000}}" alt="{{title}}">
-                                </noscript>
-                            </figure>
-                        </li>
-                    
-                    {{/all_images}}
+                            <noscript><img src="{{url-1000}}" alt="{{title}}"></noscript>
+                        </figure>
+                    </li>{{/all_images}}
                     </ul>
                 </div>
 
@@ -271,6 +258,7 @@ example: <html lang="en" class="fun fix-header"> enables a comic hand and a fixe
             {{#related_products?}}
             <section id="products" class="related">
                 <h2 class="rel-divider">{{#lang}}Related{{/lang}}</h2>
+                <div class="productlist">
                     {{#related_products}}
                         <article class="product" class="list">
                             
@@ -310,7 +298,7 @@ example: <html lang="en" class="fun fix-header"> enables a comic hand and a fixe
 
                         </article>
                     {{/related_products}}
-
+                </div>
             </section>
             {{/related_products?}}
 
@@ -329,20 +317,27 @@ example: <html lang="en" class="fun fix-header"> enables a comic hand and a fixe
     </article>
 
 {{/about_page}}
+</div>
+<footer>
 
-<footer class="light">
-
-    <div class="desc">{{store_description}}</div>
 
             <a class="{{#about_page}}selected{{/about_page}}" href="{{store_url}}/page/about">
             {{#lang}}About us{{/lang}}
             </a>
+            {{#store_blog_url}}
+                <a href="{{store_blog_url}}" target="_blank">
+                    Blog
+                </a>
+            {{/store_blog_url}}
+            <div id="search_container">
+                {{search}}
+            </div><br>
             {{#return_policy}}Return Policy{{/return_policy}}
             {{#terms}}Terms &amp; Conditions{{/terms}}
+
+            
 </footer>
-
-</div>
-
+<div id="bg"></div>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <script type="text/javascript">
         if(typeof window.jQuery !== 'undefined') {
@@ -352,7 +347,7 @@ example: <html lang="en" class="fun fix-header"> enables a comic hand and a fixe
 
      <noscript>
         <style type="text/css">
-            figure img {
+            figure img,footer {
                 opacity: 1;
                 -webkit-opacity: 1;
                 -moz-opacity: 1;    
@@ -361,6 +356,7 @@ example: <html lang="en" class="fun fix-header"> enables a comic hand and a fixe
             }
         </style>
     </noscript>
+
 </body>
 </html>
 

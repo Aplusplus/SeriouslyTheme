@@ -9,9 +9,12 @@
 			version: 0.2,
 			logoheight:100,
 			spacing:20,
-			fixLogoAfter: 100 + 6*20,
+			fixLogoAfter: 50,
+			breakpointOneCol:1030,
 			states: {
-				SCROLLED_PAST_NAV:'scrolled-past-nav'
+				SCROLLED_PAST_NAV:'scrolled-past-nav',
+				SCROLLED_TO_RELATED:'scrolled-to-related',
+				SMALL_CONTENT:'small-content',
 			}
 		},
 		$W = $(W),
@@ -27,7 +30,7 @@
 		$('figure.responsive').picture();
 
 		// prepare intro animation
-		$('.product').each(function(i,e){
+		$('#products .product').each(function(i,e){
 			$(this).css('transition-delay',50+(i*50)+'ms');
 		});
 
@@ -35,6 +38,15 @@
 		$('#product .image_container').click(function(){
 			self.$B.toggleClass('imagezoom');
 		});
+
+		$('.image_container figure').each(function(){
+			var $t = $(this); 
+			$t.imagesLoaded(function(){
+				$t.addClass('loaded');
+			});
+		});
+
+
 
 
 		// tell css about touch
@@ -58,8 +70,15 @@
 			// if logo is fixed to top and is clicked scroll to top before going back to the homepage
 			if(self._bodyHasState(self.states.SCROLLED_PAST_NAV)) {
 				e.preventDefault();
-				$W.scrollTop(0);
+				$W.scrollTo(0,500);
+				return;
 			}
+
+			$('#container').addClass('exit');
+		});
+
+		$('#nav a,.product a').mousedown(function(e){
+			$('#container').addClass('exit');
 		});
 
 		
@@ -70,15 +89,18 @@
 		});
 
 		// bind window events
-		
+		$W.load(self.loaded);
+
+
 		$W.on({
-			load:self.loaded,
 			resize:self.resize,
 			scroll:self.scroll
 		});
 
-		// magic
-		// self.listView = new window.infinity.ListView($('#container'));
+		if($('#product').length) {
+			$W.scrollTop(self.fixLogoAfter+1);
+		}
+
 
 		// finally tell CSS that JS is here and has its back – this triggers animations
 		self.$B.addClass('js');
@@ -89,25 +111,58 @@
 	self.loaded = function(event){
 		W.log('loaded');
 		self.$B.addClass('loaded');
+		
+
+		self.scroll();
+		self.resize();
+		
 	};
 
 	self.resize = function(event){
 		window.log('resize');
+
+		
+
+		if($('#container').outerHeight()<$W.height() && $('article.page').length) {
+			self._adjustBodyState(self.states.SMALL_CONTENT);
+
+		} else {
+			// on top or scrolling past
+			self._adjustBodyState(self.states.SMALL_CONTENT,true);
+		}
+		self.scroll();
+		setTimeout(self.scroll,100);
 	};
 
 	self.scroll = function(event){
 		
-		W.log($W.scrollTop(),self.fixLogoAfter);
-		if($W.scrollTop() > self.fixLogoAfter) {
-
+		var sT = $W.scrollTop();
+		
+		if(sT > self.fixLogoAfter) {
 			// scrolled past logo
 			self._adjustBodyState(self.states.SCROLLED_PAST_NAV);
 
 		} else {
 			// on top or scrolling past
 			self._adjustBodyState(self.states.SCROLLED_PAST_NAV,true);
-
 		} 
+
+		// when related come into view unfix the product description above
+		if($('#products.related').length) {
+			
+			var $p = $('#products.related'),
+				pixelsInScreen = -1 * ($p.offset().top - sT - $W.height());
+
+				if(pixelsInScreen > 0 && $W.width() > self.breakpointOneCol) {
+					self._adjustBodyState(self.states.SCROLLED_TO_RELATED);
+				} else {
+					self._adjustBodyState(self.states.SCROLLED_TO_RELATED,true);
+				}
+
+
+		}
+
+
 	};
 
 	self._adjustBodyState = function(state,remove) {
