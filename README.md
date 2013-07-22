@@ -1,4 +1,5 @@
-SeriouslyTheme
+Seriously eCommerce Theme
 ==============
 
-The Seriously Theme for Tictail
+This is the repository for
+This theme
