@@ -43,7 +43,7 @@
     // enforced logo height if used as an image
     @logoheight:110px;
 
-    // maximal width used for product display
+    // maximal width used for product listing display
     @maxwidth: 1650px;
 
     // The height of the product images when viewed on small screens
@@ -697,7 +697,7 @@
     #product {
         position: relative;
         overflow: hidden;
-        max-width:@maxwidth;
+        // max-width:@maxwidth;
         margin: 0 auto 0 auto;
         padding-top: @base-spacing*1;
 
@@ -843,7 +843,7 @@
                 width: 100px;
                 height: 94px;
                 position: absolute;
-                right:10%;
+                right:0;
                 top:0;
                 .transform(scale(0.5));
             };
