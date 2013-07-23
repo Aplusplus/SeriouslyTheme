@@ -36,13 +36,24 @@
 
 		// bind image zoom
 		$('#product .image_container').click(function(){
-			self.$B.toggleClass('imagezoom');
+			
+
+			if(!!('ontouchstart' in window)) {
+
+				if(!self.$B.is('.imagezoom')) {
+					self.$B.toggleClass('imagezoom');
+					$('.image_container').scrollTo({top:0,left:200},{duration:400,easign:'elasout'});
+				} 
+
+			} else {
+				self.$B.toggleClass('imagezoom');
+			}
 		});
 
 		$('.image_container figure').each(function(){
 			var $t = $(this); 
-			$t.imagesLoaded(function(){
-				$t.addClass('loaded');
+			$t.addClass('loading').imagesLoaded(function(){
+				$t.removeClass('loading').addClass('loaded');
 			});
 		});
 
@@ -77,7 +88,7 @@
 			$('#container').addClass('exit');
 		});
 
-		$('#nav a,.product a').mousedown(function(e){
+		$('#nav a,.product a').blur(function(e){
 			$('#container').addClass('exit');
 		});
 
@@ -97,9 +108,13 @@
 			scroll:self.scroll
 		});
 
-		if($('#product').length) {
-			$W.scrollTop(self.fixLogoAfter+1);
-		}
+
+			setTimeout(function(){
+				W.log('init scroll');
+				W.scrollTo(0, $('#product').length ? self.fixLogoAfter+1 : 1);
+			},10);
+			
+		
 
 
 		// finally tell CSS that JS is here and has its back – this triggers animations
@@ -111,17 +126,12 @@
 	self.loaded = function(event){
 		W.log('loaded');
 		self.$B.addClass('loaded');
-		
-
-		self.scroll();
 		self.resize();
 		
 	};
 
 	self.resize = function(event){
 		window.log('resize');
-
-		
 
 		if($('#container').outerHeight()<$W.height() && $('article.page').length) {
 			self._adjustBodyState(self.states.SMALL_CONTENT);
@@ -131,16 +141,16 @@
 			self._adjustBodyState(self.states.SMALL_CONTENT,true);
 		}
 		self.scroll();
-		setTimeout(self.scroll,100);
 	};
 
 	self.scroll = function(event){
 		
 		var sT = $W.scrollTop();
-		
+		W.log('scroll',sT);
 		if(sT > self.fixLogoAfter) {
 			// scrolled past logo
 			self._adjustBodyState(self.states.SCROLLED_PAST_NAV);
+			
 
 		} else {
 			// on top or scrolling past
@@ -155,6 +165,7 @@
 
 				if(pixelsInScreen > 0 && $W.width() > self.breakpointOneCol && self._bodyHasState(self.states.SCROLLED_PAST_NAV)) {
 					self._adjustBodyState(self.states.SCROLLED_TO_RELATED);
+					window.log('scrolled to related …');
 				} else {
 					self._adjustBodyState(self.states.SCROLLED_TO_RELATED,true);
 				}

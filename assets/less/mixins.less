@@ -78,7 +78,25 @@
         -o-transform: scale(@scale);
         transform: scale(@scale);
         }
+
+    .animation (...) {
+        -webkit-animation:@arguments; 
+        -moz-animation:@arguments;   
+        -o-animation:@arguments;      
+        animation:@arguments;
+    }
+
     .debug(@color:red) {
         
         .box-shadow(~"-1px -1px 0 @{color}, 1px 1px 0 @{color}");
+    }
+
+    .clearfix {
+        &:before,&:after {
+            content: ""; display: table; 
+        };
+        &:after {
+            clear: both;
+        };
+        zoom:1;
     }

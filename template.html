@@ -19,7 +19,8 @@ fix-header: keep the logo and the nav floating on top
 <html lang="en" class="fix-header fun">
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>
         {{store_name}}
         {{! Add the label of the current navigation item on list pages }}
@@ -68,7 +69,13 @@ fix-header: keep the logo and the nav floating on top
                 </a>
             </li>
 
-
+            {{#store_blog_url}}
+            <li>
+                <a href="{{store_blog_url}}" target="_blank">
+                    Blog
+                </a>
+            </li>
+            {{/store_blog_url}}
 
 
             {{#navigation}}
@@ -311,6 +318,9 @@ fix-header: keep the logo and the nav floating on top
 </div>
 <footer>
 
+            <div id="search_container">
+                {{search}}
+            </div><br>
 
             <a class="{{#about_page}}selected{{/about_page}}" href="{{store_url}}/page/about">
             {{#lang}}About us{{/lang}}
@@ -320,9 +330,7 @@ fix-header: keep the logo and the nav floating on top
                     Blog
                 </a>
             {{/store_blog_url}}
-            <div id="search_container">
-                {{search}}
-            </div><br>
+            
             {{#return_policy}}Return Policy{{/return_policy}}
             {{#terms}}Terms &amp; Conditions{{/terms}}
 
