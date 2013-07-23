@@ -130,7 +130,6 @@
 
 	self.loaded = function(event){
 		W.log('loaded');
-		self.loaded = true;
 		self.$B.addClass('loaded');
 		self.resize();
 		
@@ -152,7 +151,7 @@
 	self.scroll = function(event){
 		
 		var sT = $W.scrollTop();
-		W.log('scroll',sT);
+		// W.log('scroll',sT);
 		if(sT > self.fixLogoAfter) {
 			// scrolled past logo
 			self._adjustBodyState(self.states.SCROLLED_PAST_NAV);
@@ -164,7 +163,7 @@
 		} 
 
 		// when related come into view unfix the product description above
-		if($('#products.related').length && self.loaded === true) {
+		if($('.loaded #products.related').length) {
 			
 			var $p = $('#products.related'),
 				pixelsInScreen = -1 * ($p.offset().top - sT - $W.height());
