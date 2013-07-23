@@ -99,6 +99,11 @@
 			$(this).find('h1 a').trigger('click');
 		});
 
+
+		// shorten text on the listing page, looks better
+		$('.text.compact').dotdotdot();
+
+
 		// bind window events
 		$W.load(self.loaded);
 
