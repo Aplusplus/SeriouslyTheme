@@ -23,6 +23,8 @@ Keeps the logo fixed to the top when the viewport is high enough. To look good t
 ### .fun
 Adds a comic hand to underline the buy now button. A strategy that has been proven to drive up conversion rates by at least 65.8% on average.
 
+### .white
+Pure white background
 
 For further customisation refere to the documentation of the [tictail template syntax](https://tictail.com/docs)
 
