@@ -1,12 +1,11 @@
 # The Seriously Tictail Theme
 
-Here you find the source files used to create the [Seriously theme](http://seriously.tictail.com/) for Tictail. It looks like this:
+Here you find the source files used to create the [Seriously theme](http://seriously.tictail.com/) for Tictail. This repository is here if you want to go in and complie your adjusted CSS or JS assets. It looks like this:
 
-![Screenshot of Listing](http://d1zjcuqflbd5k.cloudfront.net/files/acc_6347/UYXo?response-content-disposition=inline;%20filename=screen1.png;%20filename*=UTF-8%27%27screen1.png&Expires=1374585069&Signature=bC4jX4YzpLGCaG6fVj-0T0wrOFXmnEEz6JokTONTiCQiZvMab8f4Ovi1FrtbbKMXrZLWvmkdxy-QiapkLddPbBHx4NxN87~1uVxxgHmelgYpkRFHI~LQ9syMG1P9FmtDCBO3J04BgFrCDo6-YNYKptSiwV6N8df4eh19qadvEgA_&Key-Pair-Id=APKAJTEIOJM3LSMN33SA)
+![Screenshot of Listing](https://dl.dropboxusercontent.com/u/73325/tictail/screen1.png)
 
-![Screenshot of Product](http://d1zjcuqflbd5k.cloudfront.net/files/acc_6347/JcsU?response-content-disposition=inline;%20filename=screen2.png;%20filename*=UTF-8%27%27screen2.png&Expires=1374585140&Signature=GayJjUDvpd4KA34LHGTfRzZIb~nVhfSV23YQbGt6AtVd5UrN7ZhLktLW6GSltJ4WSREJmBhXSkZ~2i7HZuArEab28pvegggc2~znIywe5exCzEVOmALXFWdNkgnR1SU7ieA5AHx~bBiBBoSF3ww37shZfGnws-5keDcXaASn00E_&Key-Pair-Id=APKAJTEIOJM3LSMN33SA)
+![Screenshot of Product](https://dl.dropboxusercontent.com/u/73325/tictail/screen2.png)
 
-This repositry is here if you want to go in and complie your adjusted CSS or JS assets.
 
 
 ## Simple Customisation
@@ -32,10 +31,11 @@ For further customisation refere to the documentation of the [tictail template s
 ## Features & Dependencies
 * Responsive design and assets
 * Retina ready
-* Speed optimised  
+* Performance optimised
 * [Less](http://lesscss.org) based CSS template
 * [jQuery 1.9.1](http://http://jquery.com)
-* [jQuery Picture 0.9](http://jquerypicture.com) by @Abban * [jQuery imagesLoaded 3.0.4](https://github.com/desandro/imagesloaded) by @desandro 
+* [jQuery Picture 0.9](http://jquerypicture.com) by @Abban 
+* [jQuery imagesLoaded 3.0.4](https://github.com/desandro/imagesloaded) by @desandro 
 * [jQuery scrollTo 1.4.6](https://github.com/flesler/jquery.scrollTo) by @flesler
 * [jQuery dotdotdot 1.5.11](https://github.com/FrDH/jQuery.dotdotdot)  by @FrDH
 
