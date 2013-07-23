@@ -130,6 +130,7 @@
 
 	self.loaded = function(event){
 		W.log('loaded');
+		self.loaded = true;
 		self.$B.addClass('loaded');
 		self.resize();
 		
@@ -163,7 +164,7 @@
 		} 
 
 		// when related come into view unfix the product description above
-		if($('#products.related').length) {
+		if($('#products.related').length && self.loaded === true) {
 			
 			var $p = $('#products.related'),
 				pixelsInScreen = -1 * ($p.offset().top - sT - $W.height());
