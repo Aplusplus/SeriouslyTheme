@@ -161,6 +161,8 @@
         color: #333;
         text-decoration: none;
         border-bottom: 2px solid rgba(0,0,0,0);
+        -webkit-tap-highlight-color:rgba(0,0,0,0);
+
         &:hover {
             color: #000;
             border-bottom: 2px solid rgba(0,0,0,1);
@@ -168,6 +170,10 @@
 
         h1 &,&.image_container {
             border:none;
+            outline: none;
+        }
+        &:active {
+            outline: none;
         }
     }
 
