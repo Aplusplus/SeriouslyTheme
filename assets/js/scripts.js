@@ -92,12 +92,6 @@
 			$('#container').addClass('exit');
 		});
 
-		
-
-		// clicking on the whole product leads to the product page, like a boss
-		$('#products .product').click(function(){
-			$(this).find('h1 a').trigger('click');
-		});
 
 
 		// shorten text on the listing page, looks better
