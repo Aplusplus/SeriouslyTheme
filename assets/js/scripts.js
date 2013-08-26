@@ -70,6 +70,10 @@
 			$('#nav').addClass('cat_active');
 		}
 
+		// fix edge case with 2 line top menu also rechecked upon resizing
+		$('.child_navigation').css('top',$('#nav').height());
+		
+
 		$('header').hover(function(){
 			self.$B.addClass('hover-header');
 		},function() {
@@ -139,6 +143,9 @@
 			// on top or scrolling past
 			self._adjustBodyState(self.states.SMALL_CONTENT,true);
 		}
+
+		$('.child_navigation').css('top',$('#nav').height());
+
 		self.scroll();
 	};
 
