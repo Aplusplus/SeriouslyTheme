@@ -47,7 +47,7 @@
     @maxwidth: 1650px;
 
     // The height of the product images when viewed on small screens
-    @mobileSlideHeight: 260px;
+    @mobileSlideHeight: 300px;
 
 
 
@@ -758,7 +758,7 @@
 
             .imagezoom.touch & {
                 overflow: scroll;
-                height: @mobileSlideHeight  + 12px;
+                height: @mobileSlideHeight + 12px;
                 // overflow-y: hidden;
                  -webkit-overflow-scrolling: touch; 
                  &:before {
@@ -767,6 +767,12 @@
             }
 
             
+            // .imagezoom & {
+            //     height: (@mobileSlideHeight*2)+12px;
+            //     figure img {
+            //         height: (@mobileSlideHeight*2);
+            //     }
+            // }
 
 
            
@@ -777,6 +783,7 @@
                 margin-bottom: 0;
                 img {
                     height: @mobileSlideHeight;
+                    height: 100%;
                     width:auto;
                     max-width: none;
                     max-height: none;
@@ -889,6 +896,7 @@
                     display: inline-block;
                     line-height: 20px;
                     margin-right: 1em;
+                    border: none;
                  } 
              }
 
