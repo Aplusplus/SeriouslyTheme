@@ -420,7 +420,8 @@ header {
     -ms-opacity: 0.4;
     -o-opacity: 0.4;
     -webkit-filter: blur(6px);
-    filter: blur(6px);
+    -moz-filter: blur(6px);
+    -ms-filter: blur(6px);
   }
 }
 /* ******************************
@@ -684,6 +685,7 @@ figure.loading:before {
   -moz-opacity: 0.4;
   -ms-opacity: 0.4;
   -o-opacity: 0.4;
+  margin-bottom: 2em;
   text-align: center;
 }
 #products.related .product .text {
@@ -716,6 +718,7 @@ figure.loading:before {
   top: 80px;
   left: 0;
   z-index: 95;
+  overflow: auto;
 }
 .touch #product .image_container {
   overflow: hidden;
@@ -782,12 +785,6 @@ figure.loading:before {
 #product .left_info h1 {
   text-align: center;
   width: 100%;
-  -webkit-transition: all 800ms cubic-bezier(0.3, 1.025, 0.405, 0.975);
-  -moz-transition: all 800ms cubic-bezier(0.3, 1.025, 0.405, 0.975);
-  -o-transition: all 800ms cubic-bezier(0.3, 1.025, 0.405, 0.975);
-  -ms-transition: all 800ms cubic-bezier(0.3, 1.025, 0.405, 0.975);
-  transition: all 800ms cubic-bezier(0.3, 1.025, 0.405, 0.975);
-  -webkit-backface-visibility: hidden;
   -webkit-transform: translateZ(0);
   -moz-transform: translateZ(0);
   -ms-transform: translateZ(0);
@@ -846,11 +843,11 @@ figure.loading:before {
   -moz-opacity: 0.5;
   -ms-opacity: 0.5;
   -o-opacity: 0.5;
-  -webkit-transition: all 800ms cubic-bezier(0.3, 1.025, 0.405, 0.975);
-  -moz-transition: all 800ms cubic-bezier(0.3, 1.025, 0.405, 0.975);
-  -o-transition: all 800ms cubic-bezier(0.3, 1.025, 0.405, 0.975);
-  -ms-transition: all 800ms cubic-bezier(0.3, 1.025, 0.405, 0.975);
-  transition: all 800ms cubic-bezier(0.3, 1.025, 0.405, 0.975);
+  -webkit-transition: opacity 800ms cubic-bezier(0.3, 1.025, 0.405, 0.975);
+  -moz-transition: opacity 800ms cubic-bezier(0.3, 1.025, 0.405, 0.975);
+  -o-transition: opacity 800ms cubic-bezier(0.3, 1.025, 0.405, 0.975);
+  -ms-transition: opacity 800ms cubic-bezier(0.3, 1.025, 0.405, 0.975);
+  transition: opacity 800ms cubic-bezier(0.3, 1.025, 0.405, 0.975);
   -webkit-backface-visibility: hidden;
   cursor: pointer;
 }
@@ -860,7 +857,8 @@ figure.loading:before {
 }
 .no-touch #product .social .tictail_social_buttons .tictail_social_button a {
   height: 20px;
-  display: inline-block;
+  display: block;
+  float: left;
   line-height: 20px;
   margin-right: 1em;
   border: none;
@@ -871,7 +869,7 @@ figure.loading:before {
   -moz-opacity: 1;
   -ms-opacity: 1;
   -o-opacity: 1;
-  background-position: -2000px top;
+  background-position: -50px top;
 }
 .no-touch #product .social:hover .tictail_social_buttons {
   visibility: visible;
@@ -938,6 +936,7 @@ figure.loading:before {
   }
   #products .product .image_container {
     position: relative;
+    overflow: hidden;
   }
   #products .product .description {
     width: 70%;
@@ -974,12 +973,11 @@ figure.loading:before {
   }
   #product .left_info {
     left: 4%;
-    -webkit-transition: all 800ms cubic-bezier(0.3, 1.025, 0.405, 0.975);
-    -moz-transition: all 800ms cubic-bezier(0.3, 1.025, 0.405, 0.975);
-    -o-transition: all 800ms cubic-bezier(0.3, 1.025, 0.405, 0.975);
-    -ms-transition: all 800ms cubic-bezier(0.3, 1.025, 0.405, 0.975);
-    transition: all 800ms cubic-bezier(0.3, 1.025, 0.405, 0.975);
-    -webkit-backface-visibility: hidden;
+    -webkit-transition: opacity 800ms cubic-bezier(0.3, 1.025, 0.405, 0.975), -webkit-transform 800ms cubic-bezier(0.3, 1.025, 0.405, 0.975);
+    -moz-transition: opacity 800ms cubic-bezier(0.3, 1.025, 0.405, 0.975), -moz-transform 800ms cubic-bezier(0.3, 1.025, 0.405, 0.975);
+    -ms-transition: opacity 800ms cubic-bezier(0.3, 1.025, 0.405, 0.975), -ms-transform 800ms cubic-bezier(0.3, 1.025, 0.405, 0.975);
+    -o-transition: opacity 800ms cubic-bezier(0.3, 1.025, 0.405, 0.975), -o-transform 800ms cubic-bezier(0.3, 1.025, 0.405, 0.975);
+    transition: opacity 800ms cubic-bezier(0.3, 1.025, 0.405, 0.975), transform 800ms cubic-bezier(0.3, 1.025, 0.405, 0.975);
   }
   #product .left_info .description {
     padding-right: 0;
@@ -997,26 +995,26 @@ figure.loading:before {
   #product .details_container {
     right: 4%;
     top: 45%;
-    -webkit-transition: all 800ms cubic-bezier(0.3, 1.025, 0.405, 0.975);
-    -moz-transition: all 800ms cubic-bezier(0.3, 1.025, 0.405, 0.975);
-    -o-transition: all 800ms cubic-bezier(0.3, 1.025, 0.405, 0.975);
-    -ms-transition: all 800ms cubic-bezier(0.3, 1.025, 0.405, 0.975);
-    transition: all 800ms cubic-bezier(0.3, 1.025, 0.405, 0.975);
-    -webkit-backface-visibility: hidden;
+    -webkit-transition: opacity 800ms cubic-bezier(0.3, 1.025, 0.405, 0.975), -webkit-transform 800ms cubic-bezier(0.3, 1.025, 0.405, 0.975);
+    -moz-transition: opacity 800ms cubic-bezier(0.3, 1.025, 0.405, 0.975), -moz-transform 800ms cubic-bezier(0.3, 1.025, 0.405, 0.975);
+    -ms-transition: opacity 800ms cubic-bezier(0.3, 1.025, 0.405, 0.975), -ms-transform 800ms cubic-bezier(0.3, 1.025, 0.405, 0.975);
+    -o-transition: opacity 800ms cubic-bezier(0.3, 1.025, 0.405, 0.975), -o-transform 800ms cubic-bezier(0.3, 1.025, 0.405, 0.975);
+    transition: opacity 800ms cubic-bezier(0.3, 1.025, 0.405, 0.975), transform 800ms cubic-bezier(0.3, 1.025, 0.405, 0.975);
   }
   .fun #product .details_container:after {
     right: 10%;
     top: 100px;
   }
   #product .image_container {
-    -webkit-transition: all 800ms cubic-bezier(0.3, 1.025, 0.405, 0.975);
-    -moz-transition: all 800ms cubic-bezier(0.3, 1.025, 0.405, 0.975);
-    -o-transition: all 800ms cubic-bezier(0.3, 1.025, 0.405, 0.975);
-    -ms-transition: all 800ms cubic-bezier(0.3, 1.025, 0.405, 0.975);
-    transition: all 800ms cubic-bezier(0.3, 1.025, 0.405, 0.975);
+    -webkit-transition: width 800ms cubic-bezier(0.3, 1.025, 0.405, 0.975);
+    -moz-transition: width 800ms cubic-bezier(0.3, 1.025, 0.405, 0.975);
+    -o-transition: width 800ms cubic-bezier(0.3, 1.025, 0.405, 0.975);
+    -ms-transition: width 800ms cubic-bezier(0.3, 1.025, 0.405, 0.975);
+    transition: width 800ms cubic-bezier(0.3, 1.025, 0.405, 0.975);
     -webkit-backface-visibility: hidden;
     position: static;
     height: auto;
+    min-height: 100%;
     margin: 0 auto;
     padding-bottom: 80px;
     padding-top: 40px;

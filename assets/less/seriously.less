@@ -448,7 +448,9 @@
                     section,#product {
                         .opacity(0.4);
                         -webkit-filter: blur(6px);
-                        filter: blur(6px);
+                        -moz-filter: blur(6px);
+                        -ms-filter: blur(6px);
+                        // filter: blur(6px);
                     }
                 }
             }
@@ -688,6 +690,7 @@
                 margin-right:auto;
                 // display: block;
                 .opacity(0.4);
+                margin-bottom: 2em;
                 
                 // text-transform: uppercase;
                 text-align: center;
@@ -729,7 +732,7 @@
             top:60px+@base-spacing;
             left:0;
             z-index: 95;
-            
+            overflow: auto;
 
             .touch & {
                 overflow: hidden;
@@ -816,7 +819,7 @@
              h1 {
                  text-align: center;
                  width: 100%;
-                 .transition(~"all @{speed} @{ease}");
+                 // .transition(~"all @{speed} @{ease}");
                  .accerlateTransform();
                  margin-bottom: @mobileSlideHeight + 60px;
                  font-size: 150%;
@@ -885,7 +888,7 @@
              background-size: 20px auto;
              background-repeat: no-repeat;
              .opacity(0.5);
-             .transition(~"all @{speed} @{ease}");
+             .transition(~"opacity @{speed} @{ease}");
              // padding: 10px;
              cursor: pointer;
              .tictail_social_buttons {
@@ -893,7 +896,8 @@
                  visibility: hidden;
                  .tictail_social_button a {
                     height: 20px;
-                    display: inline-block;
+                    display: block;
+                    float: left;
                     line-height: 20px;
                     margin-right: 1em;
                     border: none;
@@ -903,7 +907,7 @@
 
              &:hover {
                  .opacity(1);
-                 background-position: -2000px top;
+                 background-position: -50px top;
                  .tictail_social_buttons {
                      visibility: visible;
                  }
@@ -1007,7 +1011,7 @@
 
                 .image_container {
                     position:relative;
-
+                    overflow: hidden;
                     // padding: @base-spacing*2;
                     // padding-bottom: @base-spacing*4;
                     
@@ -1067,7 +1071,15 @@
             .left_info {
                 left:4%;
                 // .transition(~"opacity 0.5s @{ease}, -webkit-transform 0.5s @{ease},-moz-transform 0.5s @{ease},transform 0.5s @{ease}");
-                .transition(~"all @{speed} @{ease}");
+                // .transition(~"left @{speed} @{ease},top @{speed} @{ease},transform @{speed} @{ease}");
+                // .transition(~"transform @{speed} @{ease}");
+                -webkit-transition:opacity @speed @ease,-webkit-transform @speed @ease;
+                -moz-transition:opacity @speed @ease,-moz-transform @speed @ease;
+                -ms-transition:opacity @speed @ease,-ms-transform @speed @ease;
+                -o-transition:opacity @speed @ease,-o-transform @speed @ease;
+                transition:opacity @speed @ease,transform @speed @ease;
+                 // .transition(~"all @{speed} @{ease}");
+
                 .description {
                     padding-right: 0;
                     text-align: right;
@@ -1085,8 +1097,11 @@
             .details_container {
                 right:4%;
                 top:45%;
-                // .transition(~"opacity 0.5s @{ease}, -webkit-transform 0.5s @{ease},-moz-transform 0.5s @{ease},transform 0.5s @{ease}");
-                .transition(~"all @{speed} @{ease}");
+                -webkit-transition:opacity @speed @ease,-webkit-transform @speed @ease;
+                -moz-transition:opacity @speed @ease,-moz-transform @speed @ease;
+                -ms-transition:opacity @speed @ease,-ms-transform @speed @ease;
+                -o-transition:opacity @speed @ease,-o-transform @speed @ease;
+                transition:opacity @speed @ease,transform @speed @ease;
                 .fun &  {
                         &:after {
                             right:10%;
@@ -1098,11 +1113,12 @@
 
 
             .image_container {
-                .transition(~"all @{speed} @{ease}");
+                .transition(~"width @{speed} @{ease}");
 
                 // padding: 0 5%;
                 position: static;
                 height: auto;
+                min-height: 100%;
                 margin:0 auto;
                 padding-bottom: @base-spacing*4;
                 padding-top: @base-spacing*2;
