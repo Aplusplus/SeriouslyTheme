@@ -294,9 +294,6 @@ header {
 #nav li.selected .child_navigation li {
   font-style: italic;
 }
-#search_container {
-  display: inline-block;
-}
 #search_container form,
 #search_container input {
   border: none;
@@ -796,7 +793,8 @@ figure.loading:before {
   -o-transform: translateZ(0);
   transform: translateZ(0);
   margin-bottom: 320px;
-  font-size: 200%;
+  font-size: 150%;
+  white-space: nowrap;
 }
 #product .left_info .description {
   max-width: 100%;
@@ -992,6 +990,7 @@ figure.loading:before {
     text-align: right;
     margin-bottom: 1em;
     line-height: 1.1em;
+    font-size: 200%;
   }
   #product .details_container {
     right: 4%;
@@ -1118,6 +1117,10 @@ figure.loading:before {
   .page .html_content img {
     width: 75%;
     margin-left: 25%;
+  }
+  .page .html_content p {
+    max-width: 100%;
+    margin-top: 1em;
   }
 }
 /* ******************************
@@ -1276,14 +1279,20 @@ footer .desc {
   color: black;
 }
 footer a {
-  margin-right: 20px;
+  margin-right: 10px;
+  margin-left: 10px;
   font-style: italic;
   color: #777;
   display: inline-block;
   clear: both;
 }
-footer a:last-child {
-  margin-right: 0;
+/* ******************************
+
+    Search Result Box
+
+    ****************************** */
+footer #tictail_search_results {
+  width: 100%;
 }
 /* ******************************
 

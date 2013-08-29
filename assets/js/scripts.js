@@ -136,7 +136,7 @@
 	self.resize = function(event){
 		window.log('resize');
 
-		if($('#container').outerHeight()<$W.height() && $('article.page').length) {
+		if($('#container').outerHeight()<$W.height()) {
 			self._adjustBodyState(self.states.SMALL_CONTENT);
 
 		} else {
