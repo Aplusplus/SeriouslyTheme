@@ -761,7 +761,8 @@
             }
 
             .imagezoom.touch & {
-                overflow: scroll;
+                overflow-x: scroll;
+                overflow-y: hidden;
                 height: @mobileSlideHeight + 12px;
                 // overflow-y: hidden;
                  -webkit-overflow-scrolling: touch; 
@@ -918,7 +919,7 @@
 
          .social {
              background-position: center center;
-
+             margin-top: 1em;
              .tictail_social_buttons {
                  margin-right: 0;
              }
@@ -1084,6 +1085,7 @@
                 -ms-transition:opacity @speed @ease,-ms-transform @speed @ease;
                 -o-transition:opacity @speed @ease,-o-transform @speed @ease;
                 transition:opacity @speed @ease,transform @speed @ease;
+                -webkit-backface-visibility: hidden;
                  // .transition(~"all @{speed} @{ease}");
 
                 .description {
@@ -1108,6 +1110,7 @@
                 -ms-transition:opacity @speed @ease,-ms-transform @speed @ease;
                 -o-transition:opacity @speed @ease,-o-transform @speed @ease;
                 transition:opacity @speed @ease,transform @speed @ease;
+                -webkit-backface-visibility: hidden;
                 .fun &  {
                         &:after {
                             right:10%;

@@ -746,7 +746,8 @@ figure.loading:before {
   text-shadow: 0 1px rgba(0, 0, 0, 0.6);
 }
 .imagezoom.touch #product .image_container {
-  overflow: scroll;
+  overflow-x: scroll;
+  overflow-y: hidden;
   height: 312px;
   -webkit-overflow-scrolling: touch;
 }
@@ -877,6 +878,7 @@ figure.loading:before {
 }
 #product .social {
   background-position: center center;
+  margin-top: 1em;
 }
 #product .social .tictail_social_buttons {
   margin-right: 0;
@@ -982,6 +984,7 @@ figure.loading:before {
     -ms-transition: opacity 800ms cubic-bezier(0.3, 1.025, 0.405, 0.975), -ms-transform 800ms cubic-bezier(0.3, 1.025, 0.405, 0.975);
     -o-transition: opacity 800ms cubic-bezier(0.3, 1.025, 0.405, 0.975), -o-transform 800ms cubic-bezier(0.3, 1.025, 0.405, 0.975);
     transition: opacity 800ms cubic-bezier(0.3, 1.025, 0.405, 0.975), transform 800ms cubic-bezier(0.3, 1.025, 0.405, 0.975);
+    -webkit-backface-visibility: hidden;
   }
   #product .left_info .description {
     padding-right: 0;
@@ -1004,6 +1007,7 @@ figure.loading:before {
     -ms-transition: opacity 800ms cubic-bezier(0.3, 1.025, 0.405, 0.975), -ms-transform 800ms cubic-bezier(0.3, 1.025, 0.405, 0.975);
     -o-transition: opacity 800ms cubic-bezier(0.3, 1.025, 0.405, 0.975), -o-transform 800ms cubic-bezier(0.3, 1.025, 0.405, 0.975);
     transition: opacity 800ms cubic-bezier(0.3, 1.025, 0.405, 0.975), transform 800ms cubic-bezier(0.3, 1.025, 0.405, 0.975);
+    -webkit-backface-visibility: hidden;
   }
   .fun #product .details_container:after {
     right: 10%;
