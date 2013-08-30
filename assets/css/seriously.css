@@ -351,6 +351,7 @@ header {
     top: 0;
     width: 100%;
     left: 0;
+    height: 110px;
   }
   .fix-header #container {
     padding-top: 230px;
@@ -914,8 +915,8 @@ figure.loading:before {
     ****************************** */
 @media (min-width: 1030px) and (min-height: 600px) {
   .fix-header header {
-    width: 70%;
-    left: 15%;
+    width: 50%;
+    left: 25%;
   }
   #products .product {
     padding-bottom: 120px;

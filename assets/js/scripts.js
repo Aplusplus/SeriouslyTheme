@@ -124,8 +124,6 @@
 		self.$B.addClass('js');
 	};
 
-
-
 	self.loaded = function(event){
 		W.log('loaded');
 		self.$B.addClass('loaded');
