@@ -918,6 +918,9 @@ figure.loading:before {
     width: 50%;
     left: 25%;
   }
+  .fix-header header:hover {
+    height: 230px;
+  }
   #products .product {
     padding-bottom: 120px;
   }
