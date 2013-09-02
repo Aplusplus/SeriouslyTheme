@@ -35,20 +35,15 @@
 		});
 
 		// bind image zoom
-		$('#product .image_container').click(function(){
-			
 
-			if(!!('ontouchstart' in window)) {
+		if(!('ontouchstart' in window)) {
 
-				if(!self.$B.is('.imagezoom')) {
-					self.$B.toggleClass('imagezoom');
-					$('.image_container').scrollTo({top:0,left:200},{duration:400,easign:'elasout'});
-				} 
-
-			} else {
+			$('#product .image_container').click(function(){
 				self.$B.toggleClass('imagezoom');
-			}
-		});
+			});
+
+		}
+		
 
 		$('.image_container figure').each(function(){
 			var $t = $(this); 
