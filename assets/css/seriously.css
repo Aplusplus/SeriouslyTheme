@@ -722,36 +722,12 @@ figure.loading:before {
   overflow: auto;
 }
 .touch #product .image_container {
-  overflow: hidden;
-}
-.touch #product .image_container:before {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  background: rgba(0, 0, 0, 0.4);
-  text-align: justify;
-  white-space: nowrap;
-  content: '←→';
-  font-weight: 700;
-  font-size: 18px;
-  border-radius: 5px;
-  color: #DDD;
-  width: 30px;
-  padding: 0 5px;
-  height: 20px;
-  margin-top: -10px;
-  margin-left: -20px;
-  line-height: 18px;
-  z-index: 99;
-  text-shadow: 0 1px rgba(0, 0, 0, 0.6);
-}
-.imagezoom.touch #product .image_container {
   overflow-x: scroll;
   overflow-y: hidden;
   height: 312px;
   -webkit-overflow-scrolling: touch;
 }
-.imagezoom.touch #product .image_container:before {
+.touch #product .image_container:before {
   display: none;
 }
 #product .image_container figure {
