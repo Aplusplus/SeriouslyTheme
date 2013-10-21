@@ -974,6 +974,7 @@ figure.loading:before {
     margin-bottom: 1em;
     line-height: 1.1em;
     font-size: 200%;
+    white-space: normal;
   }
   #product .details_container {
     right: 4%;
